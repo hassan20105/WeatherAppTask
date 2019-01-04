@@ -109,7 +109,7 @@
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginBottom="13dp"
-                        android:text="Button" />
+                        android:text="Save" />
                 </RelativeLayout>
 
                 <ImageView

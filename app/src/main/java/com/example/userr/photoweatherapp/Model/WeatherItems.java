@@ -16,12 +16,14 @@ public class WeatherItems {
         this.description = description;
         this.windSpeed = windSpeed;
     }
-    public WeatherItems(int img,  String placeName, String temperature, String description, String windSpeed) {
+    public WeatherItems(int img,  String placeName, String temperature, String description, String windSpeed,String imageLink) {
         this.img = img;
         this.placeName = placeName;
         this.temperature = temperature;
         this.description = description;
         this.windSpeed = windSpeed;
+        this.imageLink = imageLink;
+
     }
     public boolean isLiked() {
         return isLiked;

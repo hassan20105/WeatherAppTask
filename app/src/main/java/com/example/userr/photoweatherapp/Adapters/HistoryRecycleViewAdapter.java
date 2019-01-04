@@ -55,7 +55,7 @@ public class HistoryRecycleViewAdapter extends RecyclerView.Adapter<HistoryRecyc
         holder.view_layout_windTV.setText(weatherItems.getWindSpeed());
 
         if(RequestWeather.getImage(weatherItems.getDescription())==-1){
-            File mSaveBit = new File("/storage/emulated/0/Pictures/1546602758355.jpg"); // Your image file
+            File mSaveBit = new File(weatherItems.getImageLink()); // Your image file
             String filePath = mSaveBit.getPath();
             Bitmap bitmap = BitmapFactory.decodeFile(filePath);
             holder.containerlayout2.setBackground( new BitmapDrawable(context.getResources(), bitmap));

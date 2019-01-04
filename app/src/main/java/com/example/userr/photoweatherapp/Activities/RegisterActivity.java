@@ -82,7 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
             passwordET.setError("Enter Password");
             return false;
         } else if (!ValidationFields.isValidPassword(password)) {
-            passwordET.setError("Invalid Password");
+            passwordET.setError("Password at least 6 characters");
             return false;
         }
         //----------------------------------------------------

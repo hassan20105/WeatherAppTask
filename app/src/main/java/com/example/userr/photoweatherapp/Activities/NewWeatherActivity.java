@@ -3,6 +3,7 @@ package com.example.userr.photoweatherapp.Activities;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -28,6 +29,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.userr.photoweatherapp.Adapters.FileUtils;
+import com.example.userr.photoweatherapp.Model.Dailogs;
 import com.example.userr.photoweatherapp.R;
 
 import java.io.ByteArrayInputStream;
@@ -61,6 +64,9 @@ public class NewWeatherActivity extends AppCompatActivity {
     @BindView(R.id.btn_add_weather_save)
     Button saveBTN;
     File finalFile=null;
+    String path=null;
+    Dialog loadingDialog = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,50 +78,17 @@ public class NewWeatherActivity extends AppCompatActivity {
         saveBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    String place = place_nameET.getText().toString();
-                    String desc = descET.getText().toString();
-                    String temp = tempET.getText().toString();
-                    String wind = windspeedET.getText().toString();
-                    String text_to_intenal = place + "|" + desc + "|" + temp + "|" + wind +"|";
-                    StringBuilder stringBuilder = new StringBuilder();
-                    FileOutputStream fileOutputStream = null;
-                    File file ;
-                    try {
-                        Toast.makeText(NewWeatherActivity.this, ""+finalFile.getPath(), Toast.LENGTH_SHORT).show();
-                        File directory = getFilesDir();
-                        file = new File(directory, "mydata");
-                        fileOutputStream = openFileOutput(file.getName(), Context.MODE_APPEND);
-                        stringBuilder.append(text_to_intenal);
-                        PrintWriter writer = new PrintWriter(new OutputStreamWriter(fileOutputStream));
-                        Toast.makeText(getApplicationContext(), "Data Saved Successfully" + file, Toast.LENGTH_SHORT).show();
-                        writer.println(stringBuilder);
-                        writer.close();
-
-
-                    } catch (FileNotFoundException e) {
-                        e.printStackTrace();
-                        try {
-                            fileOutputStream.close();
-                        } catch (IOException e1) {
-                            e1.printStackTrace();
-                        }
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                        try {
-                            fileOutputStream.close();
-                        } catch (IOException e1) {
-                            e1.printStackTrace();
-                        }
-                    } finally {
-                        try {
-                            fileOutputStream.close();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-
-
-                }
+                loadingDialog = Dailogs.createLoadingBar(getApplicationContext());
+                loadingDialog.show();
+                String place = place_nameET.getText().toString();
+                String desc = descET.getText().toString();
+                String temp = tempET.getText().toString();
+                String wind = windspeedET.getText().toString();
+                String text_to_intenal = place + "|" + desc + "|" + temp + "|" + wind + "|" + path;
+                FileUtils.saveToFile(text_to_intenal,getApplicationContext());
+                startActivity(new Intent(getApplicationContext(),HistoryActivity.class));
+                loadingDialog.dismiss();
+            }
 
 
 
@@ -178,7 +151,7 @@ public class NewWeatherActivity extends AppCompatActivity {
 
             // CALL THIS METHOD TO GET THE ACTUAL PATH
              finalFile = new File(getRealPathFromURI(tempUri));
-
+ path = finalFile.getPath();
             Log.e("FilePath ", finalFile.getPath());
         }
     }

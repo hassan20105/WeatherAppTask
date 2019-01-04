@@ -38,7 +38,7 @@ public class HistoryActivity extends AppCompatActivity {
         recycleview.setLayoutManager(new LinearLayoutManager(this));
         StringBuffer buffer = new StringBuffer();
         File directory = getFilesDir();
-        File file = new File(directory, "mydata");
+        File file = new File(directory, "mydata5");
         FileInputStream fIn = null;
         StringTokenizer stringTokenizer;
         String matcher = "\n";
@@ -56,7 +56,7 @@ public class HistoryActivity extends AppCompatActivity {
                 }
             }
             String text = buffer.toString();
-            String place = "", desc = "", temp = "", wind = "";
+            String place = "", desc = "", temp = "", wind = "",image_link="";
 
             String[] line_splitter = text.split("\n");
             String[] line_parts = null;
@@ -66,18 +66,18 @@ public class HistoryActivity extends AppCompatActivity {
                 desc += line_parts[1] + "\n";
                 temp += line_parts[2] + "\n";
                 wind += line_parts[3] + "\n";
+                image_link+=line_parts[4]+"\n";
             }
             String[] place_split = place.split("\n");
             String[] desc_split = desc.split("\n");
             String[] temp_split = temp.split("\n");
             String[] wind_split = wind.split("\n");
+            String[] image_split = image_link.split("\n");
             items = new ArrayList<>();
             for (int i = 0; i < place_split.length; i++) {
-
-                items.add(new WeatherItems(0, place_split[i], temp_split[i], desc_split[i], wind_split[i]));
+                items.add(new WeatherItems(0, place_split[i], temp_split[i], desc_split[i], wind_split[i],image_split[i]));
                 recyclerViewAdapter = new HistoryRecycleViewAdapter(this, items);
                 recycleview.setAdapter(recyclerViewAdapter);
-
             }
 
 

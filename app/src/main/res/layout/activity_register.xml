@@ -60,10 +60,10 @@
                 android:layout_height="35dp"
                 android:layout_margin="7dp"
                 android:background="@drawable/edit_text_style"
-                android:ems="10"
                 android:drawableLeft="@drawable/pass"
+                android:ems="10"
                 android:hint="   Password"
-                android:inputType="textPersonName" />
+                android:inputType="textPassword" />
 
             <EditText
                 android:id="@+id/et_reguster_confirmpassword"
