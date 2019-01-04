@@ -35,7 +35,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
@@ -52,7 +51,7 @@
                 android:background="@drawable/edit_text_style"
                 android:drawableLeft="@drawable/user"
                 android:ems="10"
-                android:hint="   Email"
+                android:hint="@string/hint_email"
                 android:inputType="textPersonName" />
 
             <EditText
@@ -63,7 +62,7 @@
                 android:background="@drawable/edit_text_style"
                 android:drawableLeft="@drawable/pass"
                 android:ems="10"
-                android:hint="   Password"
+                android:hint="@string/hint_password"
                 android:inputType="textPassword" />
 
             <Button
@@ -72,8 +71,8 @@
                 android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:layout_margin="7dp"
-                android:background="#32DFB4"
-                android:text="Login"
+                android:background="@color/littleBlue"
+                android:text="@string/login_btn"
                 android:textColor="@color/colorWhite" />
 
             <TextView
