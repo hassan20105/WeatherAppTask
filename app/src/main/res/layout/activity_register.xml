@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_background"
+    android:orientation="vertical"
+    tools:context=".Activities.LoginActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/logo_splash" />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="320dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="70dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_weight="1"
+        android:alpha="0.56"
+        app:cardBackgroundColor="#7C786C">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="Registeration Form"
+                android:textColor="#FFFFF6"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_register_email"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
+                android:layout_margin="7dp"
+                android:background="@drawable/edit_text_style"
+                android:ems="10"
+                android:drawableLeft="@drawable/user"
+                android:hint="   Email"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/et_register_password"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
+                android:layout_margin="7dp"
+                android:background="@drawable/edit_text_style"
+                android:ems="10"
+                android:drawableLeft="@drawable/pass"
+                android:hint="   Password"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/et_reguster_confirmpassword"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
+                android:layout_margin="7dp"
+                android:background="@drawable/edit_text_style"
+                android:ems="10"
+                android:drawableLeft="@drawable/pass"
+                android:hint="   Confirm Password"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/et_register_phone"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
+                android:layout_margin="7dp"
+                android:background="@drawable/edit_text_style"
+                android:drawableLeft="@drawable/phone"
+                android:ems="10"
+                android:hint="   Phone"
+                android:inputType="phone" />
+
+            <Button
+                android:id="@+id/btn_register_register"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="7dp"
+                android:background="#32DFB4"
+                android:text="Register"
+                android:textColor="@color/colorWhite" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

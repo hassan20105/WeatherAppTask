@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_background"
+    android:orientation="vertical"
+    tools:context=".Activities.LoginActivity">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="320dp"
+        android:layout_height="90dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="72dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+
+        app:cardBackgroundColor="#6d7c786c">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="@string/label_get_started"
+                android:textColor="#FFFFF6"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_new_weather_place_name"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
+                android:layout_margin="7dp"
+                android:background="@drawable/edit_text_style"
+                android:drawableLeft="@drawable/user"
+                android:drawablePadding="5dp"
+                android:ems="10"
+                android:hint=""
+                android:inputType="textPersonName"
+                android:padding="5dp" />
+
+            <EditText 
+                android:id="@+id/et_new_weather_temperature"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
+                android:layout_margin="7dp"
+                android:background="@drawable/edit_text_style"
+                android:drawableLeft="@drawable/pass"
+                android:drawablePadding="5dp"
+                android:ems="10"
+                android:hint=""
+                android:inputType="number"
+                android:padding="5dp" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_new_weather_selected_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_margin="7dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_background" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/colorBlackTransparent" />
+
+                <ImageView
+                    android:id="@+id/iv_new_weather_add_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="7dp"
+                    android:src="@drawable/ic_camera" />
+
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_login_login"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_margin="7dp"
+                android:background="#32DFB4"
+                android:text="Login"
+                android:textColor="@color/colorWhite" />
+
+            <TextView
+                android:id="@+id/tv_login_createnew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="7dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="create New"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

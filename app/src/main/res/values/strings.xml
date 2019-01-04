@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Photo Weather App</string>
+    <string name="facebook_app_id">387617765149056</string>
+    <string name="hint_place_name">Place name</string>
+    <string name="label_get_started">Get started</string>
+    <string name="msg_no_connection">No connection</string>
+</resources>
