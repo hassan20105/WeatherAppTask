@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/img_background"
     android:orientation="vertical"
-    tools:context=".Activities.ViewActivity">
+    tools:context=".Activities.HistoryActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycleview_actavity_view"

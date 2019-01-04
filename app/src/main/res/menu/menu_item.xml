@@ -3,10 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-    android:title="History"
+    android:title="My History"
     android:id="@+id/history_menu_item"
-    app:showAsAction="always"
+    app:showAsAction="withText"
     />
+    <item
+        android:title="Add New Weather"
+        android:id="@+id/add_weather_menu_item"
+        app:showAsAction="withText"
+        />
 
 
 

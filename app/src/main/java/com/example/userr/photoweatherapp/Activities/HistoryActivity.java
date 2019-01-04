@@ -7,8 +7,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.userr.photoweatherapp.Model.WeatherItems;
 import com.example.userr.photoweatherapp.R;
-import com.example.userr.photoweatherapp.RecycleView.HistoryRecycleViewAdapter;
-import com.example.userr.photoweatherapp.RecycleView.MyRecyclerViewAdapter;
+import com.example.userr.photoweatherapp.Adapters.HistoryRecycleViewAdapter;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -24,7 +23,7 @@ import java.util.regex.Pattern;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ViewActivity extends AppCompatActivity {
+public class HistoryActivity extends AppCompatActivity {
     @BindView(R.id.recycleview_actavity_view)
     RecyclerView recycleview;
     HistoryRecycleViewAdapter recyclerViewAdapter;

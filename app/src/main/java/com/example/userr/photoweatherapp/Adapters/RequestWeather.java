@@ -1,4 +1,4 @@
-package com.example.userr.photoweatherapp.RecycleView;
+package com.example.userr.photoweatherapp.Adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -78,8 +78,9 @@ public class RequestWeather {
             img = R.drawable.raincloud;
         else if (description.contains("rain"))
             img = R.drawable.winter;
-        else
+        else if(description.contains("broken")||description.contains("few"))
             img = R.drawable.summer;
+        else img = -1;
 
         return img;
     }

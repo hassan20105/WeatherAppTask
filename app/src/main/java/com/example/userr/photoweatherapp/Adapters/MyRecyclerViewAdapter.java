@@ -1,4 +1,4 @@
-package com.example.userr.photoweatherapp.RecycleView;
+package com.example.userr.photoweatherapp.Adapters;
 
 import android.content.Context;
 import android.os.Build;
@@ -48,63 +48,12 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         holder.descTV.setText(weatherItems.getDescription());
         holder.tempTV.setText(weatherItems.getTemperature());
         holder.windSpeedTV.setText(weatherItems.getWindSpeed());
-        holder.imageView.setImageResource(weatherItems.getImg());
-        final int[] count = {0};
-        holder.favourite_imageview.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.O)
-            @Override
-            public void onClick(View view) {
 
-                count[0]++;
-                if (count[0] % 2 != 0) {
-                    holder.favourite_imageview.setImageResource(R.drawable.star2);
-                    String place = weatherItems.getPlaceName();
-                    String desc = weatherItems.getDescription();
-                    String temp = weatherItems.getTemperature();
-                    String wind = weatherItems.getWindSpeed();
-                    String text_to_intenal = place + "|" + desc + "|" + temp + "|" + wind ;
-                    StringBuilder stringBuilder = new StringBuilder();
-                    FileOutputStream fileOutputStream = null;
-                    File file = null;
-                    try {
-                        File directory = context.getFilesDir();
-                        file = new File(directory, "mydata");
-                        fileOutputStream = context.openFileOutput(file.getName(), Context.MODE_APPEND);
-                        stringBuilder.append(text_to_intenal);
-                        PrintWriter writer = new PrintWriter(new OutputStreamWriter(fileOutputStream));
-                        Toast.makeText(context, "Data Saved Successfully" + file, Toast.LENGTH_SHORT).show();
-                        writer.println(stringBuilder);
-                        writer.close();
-
-
-                    } catch (FileNotFoundException e) {
-                        e.printStackTrace();
-                        try {
-                            fileOutputStream.close();
-                        } catch (IOException e1) {
-                            e1.printStackTrace();
-                        }
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                        try {
-                            fileOutputStream.close();
-                        } catch (IOException e1) {
-                            e1.printStackTrace();
-                        }
-                    } finally {
-                        try {
-                            fileOutputStream.close();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-
-
-                }
-
-            }
-        });
-
+        try {
+            holder.imageView.setImageResource(weatherItems.getImg());
+        } catch (Exception e) {
+            holder.imageView.setImageBitmap(null);
+        }
 
     }
 
@@ -128,7 +77,6 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             placeTV = itemView.findViewById(R.id.placeTV);
             windSpeedTV = itemView.findViewById(R.id.windTV);
             imageView = itemView.findViewById(R.id.imageview);
-            favourite_imageview = itemView.findViewById(R.id.favourite_imageview);
             carview_weather_items = itemView.findViewById(R.id.carview_weather_items);
             //------------------------------------------------------------------
             carview_weather_items.setOnClickListener(new View.OnClickListener() {

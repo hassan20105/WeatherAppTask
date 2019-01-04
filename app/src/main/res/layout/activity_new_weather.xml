@@ -40,23 +40,44 @@
                 android:layout_height="35dp"
                 android:layout_margin="7dp"
                 android:background="@drawable/edit_text_style"
-                android:drawableLeft="@drawable/user"
                 android:drawablePadding="5dp"
                 android:ems="10"
-                android:hint=""
+                android:hint="Enter Place"
                 android:inputType="textPersonName"
                 android:padding="5dp" />
 
             <EditText
-                android:id="@+id/et_new_weather_temperature"
+                android:id="@+id/et_new_weather_desc"
                 android:layout_width="300dp"
                 android:layout_height="35dp"
                 android:layout_margin="7dp"
                 android:background="@drawable/edit_text_style"
-                android:drawableLeft="@drawable/pass"
                 android:drawablePadding="5dp"
                 android:ems="10"
-                android:hint=""
+                android:hint="Enter Weather Description"
+                android:inputType="textMultiLine"
+                android:padding="5dp" />
+            <EditText
+                android:id="@+id/et_new_weather_temp"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
+                android:layout_margin="7dp"
+                android:background="@drawable/edit_text_style"
+                android:drawablePadding="5dp"
+                android:ems="10"
+                android:hint="Enter The Temperature"
+                android:inputType="number"
+                android:padding="5dp" />
+
+            <EditText
+                android:id="@+id/et_new_weather_windspeed"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
+                android:layout_margin="7dp"
+                android:background="@drawable/edit_text_style"
+                android:drawablePadding="5dp"
+                android:ems="10"
+                android:hint="Enter Wind Speed"
                 android:inputType="number"
                 android:padding="5dp" />
 
@@ -79,7 +100,17 @@
                     android:layout_height="match_parent"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
-                    android:background="@color/colorBlackTransparent" />
+                    android:background="@color/colorBlackTransparent" >
+
+                    <Button
+                        android:id="@+id/btn_add_weather_save"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="13dp"
+                        android:text="Button" />
+                </RelativeLayout>
 
                 <ImageView
                     android:id="@+id/iv_new_weather_add_photo"
@@ -91,27 +122,8 @@
 
             </RelativeLayout>
 
-            <Button
-                android:id="@+id/btn_login_login"
-                android:layout_width="150dp"
-                android:layout_height="35dp"
-                android:layout_gravity="center"
-                android:layout_margin="7dp"
-                android:background="#32DFB4"
-                android:text="Login"
-                android:textColor="@color/colorWhite" />
 
-            <TextView
-                android:id="@+id/tv_login_createnew"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="7dp"
-                android:gravity="center"
-                android:padding="5dp"
-                android:text="create New"
-                android:textColor="@color/colorWhite"
-                android:textSize="16sp" />
+
 
         </LinearLayout>
 

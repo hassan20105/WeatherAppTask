@@ -54,8 +54,6 @@ public class LoginActivity extends AppCompatActivity {
         emailET.setText(getIntent().getStringExtra("email"));
         passwordET.setText(getIntent().getStringExtra("pass"));
 
-        //testing upload
-
         initlize();
         setEvents();
 

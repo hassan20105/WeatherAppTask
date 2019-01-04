@@ -1,13 +1,13 @@
-package com.example.userr.photoweatherapp.RecycleView;
+package com.example.userr.photoweatherapp.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,13 +17,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.userr.photoweatherapp.Model.WeatherItems;
 import com.example.userr.photoweatherapp.R;
 import com.facebook.share.model.SharePhoto;
 import com.facebook.share.model.SharePhotoContent;
 import com.facebook.share.widget.ShareDialog;
+
+import java.io.File;
 import java.util.List;
 
 
@@ -52,8 +53,19 @@ public class HistoryRecycleViewAdapter extends RecyclerView.Adapter<HistoryRecyc
         holder.view_layout_descTV.setText(weatherItems.getDescription());
         holder.view_layout_tempTV.setText(weatherItems.getTemperature());
         holder.view_layout_windTV.setText(weatherItems.getWindSpeed());
-        holder.containerlayout2.setBackgroundResource(RequestWeather.getImage(weatherItems.getDescription()));
-       holder.shareButton.setOnClickListener(new View.OnClickListener() {
+
+        if(RequestWeather.getImage(weatherItems.getDescription())==-1){
+            File mSaveBit = new File("/storage/emulated/0/Pictures/1546602758355.jpg"); // Your image file
+            String filePath = mSaveBit.getPath();
+            Bitmap bitmap = BitmapFactory.decodeFile(filePath);
+            holder.containerlayout2.setBackground( new BitmapDrawable(context.getResources(), bitmap));
+        }else {
+            holder.containerlayout2.setBackgroundResource(RequestWeather.getImage(weatherItems.getDescription()));
+        }
+
+
+
+        holder.shareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

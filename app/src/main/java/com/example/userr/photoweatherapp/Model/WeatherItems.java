@@ -3,7 +3,8 @@ package com.example.userr.photoweatherapp.Model;
 public class WeatherItems {
     int img;
     int fav_img;
-    String placeName, temperature, description, windSpeed;
+
+    String placeName, temperature, description, windSpeed ,imageLink;
     boolean isLiked=false;
 
 
@@ -71,5 +72,17 @@ public class WeatherItems {
 
     public void setWindSpeed(String windSpeed) {
         this.windSpeed = windSpeed;
+    }
+
+    public void setLiked(boolean liked) {
+        isLiked = liked;
+    }
+
+    public String getImageLink() {
+        return imageLink;
+    }
+
+    public void setImageLink(String imageLink) {
+        this.imageLink = imageLink;
     }
 }

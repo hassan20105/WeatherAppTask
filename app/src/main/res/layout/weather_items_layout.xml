@@ -101,11 +101,6 @@
             android:orientation="vertical">
 
 
-            <ImageView
-                android:id="@+id/favourite_imageview"
-                android:layout_width="30dp"
-                android:layout_height="40dp"
-                app:srcCompat="@drawable/star1" />
         </LinearLayout>
 
 
