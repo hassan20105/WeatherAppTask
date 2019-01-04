@@ -47,7 +47,7 @@
                 android:inputType="textPersonName"
                 android:padding="5dp" />
 
-            <EditText 
+            <EditText
                 android:id="@+id/et_new_weather_temperature"
                 android:layout_width="300dp"
                 android:layout_height="35dp"
